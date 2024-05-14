@@ -1,6 +1,7 @@
 package com.project.book.auth;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,16 +31,16 @@ public class AuthenticationController {
         return ResponseEntity.accepted().build();
     }
 
-    @PostMapping("/authenticate")
-    public ResponseEntity<AuthenticationResponse> authenticate(
-            @RequestBody AuthenticationRequest request) {
-        return ResponseEntity.ok(service.authenticate(request));
-    }
+    // @PostMapping("/authenticate")
+    // public ResponseEntity<AuthenticationResponse> authenticate(
+    // @RequestBody AuthenticationRequest request) {
+    // return ResponseEntity.ok(service.authenticate(request));
+    // }
 
-    @GetMapping("/activate-account")
-    public void confirm(
-            @RequestParam String token) throws MessagingException {
-        service.activateAccount(token);
-    }
+    // @GetMapping("/activate-account")
+    // public void confirm(
+    // @RequestParam String token) throws MessagingException {
+    // service.activateAccount(token);
+    // }
 
 }
