@@ -10,7 +10,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import com.project.book.role.Role;
 import com.project.book.role.RoleRepository;
 
-@EnableJpaAuditing
+@EnableJpaAuditing(auditorAwareRef = "auditorAware")
 @EnableAsync
 @SpringBootApplication
 public class BookNetworkApiApplication {
