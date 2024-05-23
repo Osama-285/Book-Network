@@ -6,6 +6,9 @@ import jakarta.mail.MessagingException;
 
 import org.springframework.security.authentication.LockedException;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import com.project.book.exception.OperationNotPermittedException;
+
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -86,16 +89,15 @@ public class GlobalExceptionHandler {
         // .build());
         // }
 
-        // @ExceptionHandler(OperationNotPermittedException.class)
-        // public ResponseEntity<ExceptionResponse>
-        // handleException(OperationNotPermittedException exp) {
-        // return ResponseEntity
-        // .status(BAD_REQUEST)
-        // .body(
-        // ExceptionResponse.builder()
-        // .error(exp.getMessage())
-        // .build());
-        // }
+        @ExceptionHandler(OperationNotPermittedException.class)
+        public ResponseEntity<ExceptionResponse> handleException(OperationNotPermittedException exp) {
+                return ResponseEntity
+                                .status(BAD_REQUEST)
+                                .body(
+                                                ExceptionResponse.builder()
+                                                                .error(exp.getMessage())
+                                                                .build());
+        }
 
         @ExceptionHandler(MethodArgumentNotValidException.class)
         public ResponseEntity<ExceptionResponse> handleMethodArgumentNotValidException(
