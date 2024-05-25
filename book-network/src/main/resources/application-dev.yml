@@ -21,4 +21,5 @@ application.security.jwt.secret-key: 404E635266556A586E3272357538782F413F4428472
 application.security.jwt.expiration: 86400000 # a day
 application.security.jwt.refresh-token.expiration: 604800000 # 7 days
 application.mailing.frontend.activation-url: http://localhost:4200/activate-account
+application.file.uploads.photos-output-path: ./uploads
 server.port: 8088
