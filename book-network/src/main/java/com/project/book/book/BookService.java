@@ -13,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.project.book.common.PageResponse;
 import com.project.book.exception.OperationNotPermittedException;
+import com.project.book.file.FileStorageService;
 import com.project.book.history.BookTransactionHistory;
 import com.project.book.history.BookTransactionHistoryRepository;
 import com.project.book.user.User;
