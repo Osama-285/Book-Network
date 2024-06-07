@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
 import { AuthenticationRequest } from '../../api/models';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { AuthenticationService } from '../../api/services/authentication.service';
+import { TokenService } from '../../api/token/token.service';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-login',
-  standalone: false,
-  // imports: [],
+  standalone: true,
+  imports: [FormsModule, CommonModule, RouterLink, RouterOutlet],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
