@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
-// import { routes } from './app.routes';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {
@@ -15,6 +15,7 @@ const routes: Routes = [
     component: RegisterComponent,
   },
 ];
+
 @NgModule({
   declarations: [],
   imports: [RouterModule.forRoot(routes)],
